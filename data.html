@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="main.css"/>
+    <script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.11/jquery.csv.min.js"></script>
+</head>
+<body>
+    <div class="p-3 mb-5 bg-warning-subtle text-emphasis-warning">World Happiness Report 2022 Applet</div>
+    <div class="container">
+
+        <div class="col d-flex justify-content-center mx-auto p-2 mt-5">
+            <h2>How Happy is Your Country?</h2>
+        </div>
+
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Start Page</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="home.html">Home Page</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="data.html">Data Page</a>
+            </li>
+          </ul>
+
+
+          <div class="col d-flex justify-content-center ">
+            <div class="card text-center" style="width: 80%;">
+                <div class="card-body p-3 bg-warning-subtle text-emphasis-warning">
+                  <p>The ranking is calculated from scores on 6 different categories. 
+                    If you would like to change the country selected, please return to the previous page.
+                  </p>
+                  <div id="myCountry" class="box my-3">
+                    <h6>Select a country on the Home Page to begin</h6>
+                  </div>
+                  <div class="row gx-3">
+                    <div class="col-4 bg-success-subtle">GDP Per Capita</div>
+                    <div class="col-4 bg-success-subtle">Social Support</div>
+                    <div class="col-4 bg-success-subtle">Healthy Life Expectancy</div>
+                  </div>
+                  <div class="row my-3">
+                    
+                    <div class="col-4">
+                      <div class="form-floating mb-3">
+                        <textarea id="gdp" class="form-control" id="floatingTextarea2Disabled" style="height: 150px" disabled></textarea>
+                        <label for="floatingTextarea2Disabled"> GDP</label>
+                      </div>
+                    </div>
+
+                    <div class="col-4">
+                      <div class="form-floating mb-3">
+                        <textarea id="socialSupport" class="form-control" id="floatingTextarea2Disabled" style="height: 150px" disabled></textarea>
+                        <label for="floatingTextarea2Disabled"> Social Support</label>
+                      </div>
+                    </div>
+
+                    <div class="col-4">
+                      <div class="form-floating mb-3">
+                        <textarea id="lifeExpectancy" class="form-control" id="floatingTextarea2Disabled" style="height: 150px" disabled></textarea>
+                        <label for="floatingTextarea2Disabled"> Healthy Life Expectancy</label>
+                      </div>
+                    </div>
+                </div>
+                <div class="row gx-3">
+                  <div class="col-4 bg-success-subtle">Freedom to Make Life Choices</div>
+                  <div class="col-4 bg-success-subtle">Generosity</div>
+                  <div class="col-4 bg-success-subtle">Perceptions of Corruption</div>
+                </div>
+                <div class="row my-3">
+                    
+                  <div class="col-4">
+                    <div class="form-floating mb-3">
+                      <textarea id="freedom" class="form-control" id="floatingTextarea2Disabled" style="height: 150px" disabled></textarea>
+                      <label for="floatingTextarea2Disabled"> Freedom to Make Life Choices</label>
+                    </div>
+                  </div>
+
+                  <div class="col-4">
+                    <div class="form-floating mb-3">
+                      <textarea id="generosity" class="form-control" id="floatingTextarea2Disabled" style="height: 150px" disabled></textarea>
+                      <label for="floatingTextarea2Disabled"> Generosity</label>
+                    </div>
+                  </div>
+
+                  <div class="col-4">
+                    <div class="form-floating mb-3">
+                      <textarea id="corruption" class="form-control" id="floatingTextarea2Disabled" style="height: 150px" disabled></textarea>
+                      <label for="floatingTextarea2Disabled"> Perceptions of Corruption</label>
+                    </div>
+                  </div>
+              </div>
+                <a href="home.html" class="btn btn-outline-primary my-3">Home Page</a>
+              </div>
+          </div>
+
+    </div>
+    <script src="main.js"></script>
+    <script>
+      window.onload=function(){
+        var saveValue= localStorage.getItem('saveValue');
+        setOutputData(saveValue);
+      }
+
+    
+    </script>
+</body>
+</html>

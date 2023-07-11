@@ -1,0 +1,37 @@
+  h2{
+      color:#538790;
+      font-family: "Garamond", serif;
+    }
+  h6{
+    color:#040404;
+    font-family: "Garamond", serif;
+  }
+  .nav-link{
+    color:#E59998;
+    font-family: "Lucida Console", "Courier New", monospace;
+  }
+  p{
+    color:#957DAD;;
+    font-family: "Lucida Console", "Courier New", monospace;
+  }
+  .btn{
+    font-family: "Lucida Console", "Courier New", monospace;
+  }
+  .p-3{
+    color:#957DAD;
+    font-family: "Garamond", serif;
+  }
+  .alert{
+    color:#957DAD;
+    font-family: "Garamond", serif;
+    background-color: #ddd5f3;
+  }
+  .icon-link{
+    color:#957DAD;
+  }
+  .box{
+    border: 1px solid rgb(200, 200, 200); /* Border style */
+    border-radius: 5px; /* Rounded corners */
+    padding: 2px; /* Padding around the content */
+    background-color: white; /* Background color */
+  }

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="main.css"/>
+    <script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.11/jquery.csv.min.js"></script>
+</head>
+<body>
+    <div class="p-3 mb-5 bg-warning-subtle text-emphasis-warning">World Happiness Report 2022 Applet</div>
+    <div class="container">
+
+        <div class="col d-flex justify-content-center mx-auto p-2 mt-5">
+            <h2>How Happy is Your Country?</h2>
+        </div>
+
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Start Page</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="home.html">Home Page</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="data.html">Data Page</a>
+            </li>
+          </ul>
+
+          <div class="col d-flex justify-content-center ">
+            <div class="card text-center" style="width: 80%;">
+                <div class="card-body p-3 bg-warning-subtle text-emphasis-warning">
+                  <p>Please either select from the drop down of countries included in the report or randomly generate a country to begin.
+                  </p>
+
+                  <div class="row">
+                    <div class="col-9">
+                      <select class="form-select form-select-sm" id= "dropdown" aria-label=".form-select-sm example">
+                        <option selected>Select Country Below--</option>
+                        <option value="146">Afghanistan</option>
+                        <option value="90">Albania</option>
+                        <option value="96">Algeria</option>
+                        <option value="57">Argentina</option>
+                        <option value="82">Armenia</option>
+                        <option value="12">Australia</option>
+                        <option value="11">Austria</option>
+                        <option value="92">Azerbaijan</option>
+                        <option value="21">Bahrain</option>
+                        <option value="94">Bangladesh</option>
+                        <option value="65">Belarus</option>
+                        <option value="19">Belgium</option>
+                        <option value="115">Benin</option>
+                        <option value="71">Bolivia</option>
+                        <option value="67">Bosnia and Herzegovina</option>
+                        <option value="142">Botswana</option>
+                        <option value="38">Brazil</option>
+                        <option value="85">Bulgaria</option>
+                        <option value="113">Burkina Faso</option>
+                        <option value="114">Cambodia</option>
+                        <option value="102">Cameroon</option>
+                        <option value="15">Canada</option>
+                        <option value="130">Chad</option>
+                        <option value="44">Chile</option>
+                        <option value="72">China</option>
+                        <option value="66">Colombia</option>
+                        <option value="116">Comoros</option>
+                        <option value="99">Congo</option>
+                        <option value="23">Costa Rica</option>
+                        <option value="47">Croatia</option>
+                        <option value="41">Cyprus</option>
+                        <option value="18">Czechia</option>
+                        <option value="2">Denmark</option>
+                        <option value="69">Dominican Republic</option>
+                        <option value="76">Ecuador</option>
+                        <option value="129">Egypt</option>
+                        <option value="49">El Salvador</option>
+                        <option value="36">Estonia</option>
+                        <option value="125">Eswatini, Kingdom of</option>
+                        <option value="131">Ethiopia</option>
+                        <option value="1">Finland</option>
+                        <option value="20">France</option>
+                        <option value="106">Gabon</option>
+                        <option value="93">Gambia</option>
+                        <option value="105">Georgia</option>
+                        <option value="14">Germany</option>
+                        <option value="111">Ghana</option>
+                        <option value="58">Greece</option>
+                        <option value="39">Guatemala</option>
+                        <option value="109">Guinea</option>
+                        <option value="55">Honduras</option>
+                        <option value="81">Hong Kong S.A.R. of China</option>
+                        <option value="51">Hungary</option>
+                        <option value="3">Iceland</option>
+                        <option value="136">India</option>
+                        <option value="87">Indonesia</option>
+                        <option value="110">Iran</option>
+                        <option value="107">Iraq</option>
+                        <option value="13">Ireland</option>
+                        <option value="9">Israel</option>
+                        <option value="31">Italy</option>   
+                        <option value="88">Ivory Coast</option>    
+                        <option value="63">Jamaica</option>              
+                        <option value="54">Japan</option> 
+                        <option value="134">Jordan</option> 
+                        <option value="40">Kazakhstan</option> 
+                        <option value="119">Kenya</option> 
+                        <option value="32">Kosovo</option> 
+                        <option value="50">Kuwait</option> 
+                        <option value="64">Kyrgyzstan</option> 
+                        <option value="95">Laos</option> 
+                        <option value="42">Latvia</option> 
+                        <option value="145">Lebanon</option> 
+                        <option value="141">Lesotho</option> 
+                        <option value="97">Liberia</option> 
+                        <option value="86">Libya</option> 
+                        <option value="34">Lithuania</option> 
+                        <option value="6">Luxembourg</option> 
+                        <option value="128">Madagascar</option> 
+                        <option value="138">Malawi</option> 
+                        <option value="70">Malaysia</option> 
+                        <option value="123">Mali</option> 
+                        <option value="33">Malta</option> 
+                        <option value="133">Mauritania</option> 
+                        <option value="52">Mauritius</option> 
+                        <option value="46">Mexico</option> 
+                        <option value="62">Moldova</option> 
+                        <option value="68">Mongolia</option> 
+                        <option value="75">Montenegro</option> 
+                        <option value="100">Morocco</option> 
+                        <option value="101">Mozambique</option> 
+                        <option value="126">Myanmar</option> 
+                        <option value="124">Namibia</option> 
+                        <option value="84">Nepal</option> 
+                        <option value="5">Netherlands</option> 
+                        <option value="10">New Zealand</option> 
+                        <option value="45">Nicaragua</option> 
+                        <option value="104">Niger</option> 
+                        <option value="118">Nigeria</option> 
+                        <option value="79">North Cyprus</option> 
+                        <option value="89">North Macedonia</option> 
+                        <option value="8">Norway</option> 
+                        <option value="121">Pakistan</option> 
+                        <option value="122">Palestinian Territories</option> 
+                        <option value="37">Panama</option> 
+                        <option value="73">Paraguay</option> 
+                        <option value="74">Peru</option> 
+                        <option value="60">Philippines</option> 
+                        <option value="48">Poland</option> 
+                        <option value="56">Portugal</option> 
+                        <option value="28">Romania</option> 
+                        <option value="80">Russia</option> 
+                        <option value="143">Rwanda</option> 
+                        <option value="25">Saudi Arabia</option> 
+                        <option value="103">Senegal</option> 
+                        <option value="43">Serbia</option> 
+                        <option value="140">Sierra Leone</option> 
+                        <option value="27">Singapore</option> 
+                        <option value="35">Slovakia</option> 
+                        <option value="22">Slovenia</option> 
+                        <option value="91">South Africa</option> 
+                        <option value="59">South Korea</option> 
+                        <option value="29">Spain</option> 
+                        <option value="127">Sri Lanka</option> 
+                        <option value="7">Sweden</option> 
+                        <option value="4">Switzerland</option> 
+                        <option value="26">Taiwan Province of China</option> 
+                        <option value="83">Tajikistan</option> 
+                        <option value="139">Tanzania</option> 
+                        <option value="61">Thailand</option> 
+                        <option value="135">Togo</option> 
+                        <option value="120">Tunisia</option> 
+                        <option value="112">Turkey</option> 
+                        <option value="78">Turkmenistan</option> 
+                        <option value="117">Uganda</option> 
+                        <option value="98">Ukraine</option> 
+                        <option value="24">United Arab Emirates</option> 
+                        <option value="17">United Kingdom</option> 
+                        <option value="16">United States</option> 
+                        <option value="30">Uruguay</option> 
+                        <option value="53">Uzbekistan</option> 
+                        <option value="108">Venezuela</option> 
+                        <option value="77">Vietnam</option> 
+                        <option value="132">Yemen</option> 
+                        <option value="137">Zambia</option> 
+                        <option value="144">Zimbabwe</option> 
+                      </select>
+                    </div>
+                    <div id="randombtn"class="col-3 d-grid gap-2">
+                      <a class="btn btn-success">Random</a>
+                    </div>
+                  </div>
+
+                  <div class="form-floating my-3">
+                    <textarea id="output" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2Disabled" style="height: 100px" disabled></textarea>
+                    <label for="floatingTextarea2Disabled"> Country Ranking</label>
+                  </div>
+                  
+                  <div class="col mt-3">
+                    <a href="index.html" class="btn btn-outline-primary">Start Page</a>
+                    <a href="data.html" class="btn btn-outline-primary">Data Page</a>
+                  </div>
+                </div>
+              </div>
+          </div>
+    </div>
+    <script src="main.js"></script>
+    <script>   //home.html
+      const dropdown = document.getElementById("dropdown");
+      const selectedValue = dropdown.value;
+      const randombtn = document.getElementById("randombtn");
+    
+      dropdown.addEventListener("change", (event) => {
+        const selectedValue = dropdown.value;
+        setOutputMain(selectedValue);
+      });
+
+      randombtn.addEventListener("click", (event) => {
+        var number = Math.floor(Math.random() * 146) + 1;
+        setOutputMain(number);
+        dropdown.value= number;
+      });
+
+      window.onbeforeunload = function(){
+        localStorage.setItem('saveValue', dropdown.value);
+      }
+      window.onload=function(){
+        var saveValue= localStorage.getItem('saveValue');
+        setOutputMain(saveValue);
+        dropdown.value= saveValue;
+      }
+
+      </script>
+</body>
+</html>
