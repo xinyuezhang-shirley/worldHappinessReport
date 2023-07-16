@@ -1,3 +1,4 @@
+<!--index.html-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,12 +7,24 @@
     <title>Index</title>
     <link rel="stylesheet" href="css/bootstrap.css"/>
     <link rel="stylesheet" href="main.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
     <script src="main.js"></script>
+    <script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.11/jquery.csv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
 </head>
 <body>
-    <div class="p-3 mb-5 bg-warning-subtle text-emphasis-warning">World Happiness Report 2022 Applet</div>
-    <div class="container">
+    <div class="p-3 mb-5 bg-warning-subtle text-emphasis-warning">
+      World Happiness Report 2022 Applet
+    </div>
 
+    <!-- Title-->
+    <div class="container">
         <div class="col d-flex justify-content-center mx-auto p-2 mt-5">
             <h2>How Happy is Your Country?</h2>
         </div>
@@ -22,8 +35,8 @@
             <svg class="bi" aria-hidden="true"><use xlink:href="#arrow-right"></use></svg>
           </a>
         </p>
-      </div>
-
+    </div>
+        <!-- Page Nav Bar-->
         <ul class="nav justify-content-center">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="index.html">Start Page</a>
@@ -36,11 +49,13 @@
             </li>
           </ul>
 
+          <!-- Alert/Notice for citation-->
           <div class="alert" role="alert">
               This applet is made with the 2022 data, of which can be found
             <a href="https://worldhappiness.report/ed/2022/" class="alert-link">here</a>. You can also find past years' report and the 2023 report with the Learn More button below.
           </div>
 
+          <!-- Main Card with Information-->
           <div class="col d-flex justify-content-center ">
             <div class="card text-center" style="width: 80%;">
                 <div class="card-body p-3 bg-warning-subtle text-emphasis-warning">
@@ -57,13 +72,249 @@
                     <img src="worldHappinessReport.webp" class="card-img-bottom" alt="...">
                   </div>
 
+                  <!-- Page Change Button-->
                   <a href="home.html" class="btn btn-outline-primary">Home Page</a>
+                </div>
+
+                <!-- Accordion With Information-->
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                  <!-- Item 1-->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingOne">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Trends in conceptions of progress and well-being (Chapter 3)
+                      </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item">
+                            Interest in happiness and subjective well-being
+                        has risen sharply, whether measured by the
+                        frequency of those words in books in multiple
+                        global languages, or by the scale of published
+                        research, or by the number of government
+                        measurement initiatives.
+                          </li>
+                          <li class="list-group-item">
+                            By contrast, attention to income and GDP is
+                        decreasing, and in books published since 2013,
+                        the words GDP (or the like) have appeared less
+                        frequently than the word ‘happiness’.
+                          </li>
+                          <li class="list-group-item">
+                            The World Happiness Report is referred to
+                        widely, and it is now mentioned twice as often
+                        (in books) as the phrase ‘Beyond GDP’, which
+                        itself has also been on a rapidly rising trajectory.
+                          </li>
+                          <li class="list-group-item">Academic research on happiness has exploded
+                            and now involves authors from all over the world.
+                          </li>
+                          <li class="list-group-item">
+                            When organisations, academics, or governments
+                        try to define progress through creating a new
+                        set of indicators, they increasingly include
+                        measures of happiness. This reflects the strong
+                        public appetite for this conception of progress
+                        and the growing availability of data on happiness.
+                          </li>
+                          <li class="list-group-item">
+                            Thus, the science of happiness has much to offer
+                            governments devising better policies. But it can
+                            never tell them how to handle inequality or
+                            questions of long-run sustainability
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Item 2 -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingTwo">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Using social media data to capture emotions before and during COVID-19 (Chapter 4)
+                      </button>
+                    </h2>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item">
+                            Millions of people share their thoughts and
+                            feelings online via social media each day.
+                            Automated analysis of social media data
+                            offers exciting promise for measuring trends
+                            in emotions. The methods used include
+                            counts of emotional words listed in emotion
+                            dictionaries and machine learning methods
+                            which also take into account the structure
+                            and meaning of sentences.
+                          </li>
+                          <li class="list-group-item">Two case studies of tweets on Twitter examined
+                            the daily and weekly movements of positive and
+                            negative emotions, including sadness and
+                            anxiety, before and during COVID-19 in the U.K.
+                            and Austria. These were then compared with
+                            the measurements of these emotions as
+                            recorded in standard social surveys of the
+                            population. The two measures of emotion
+                            (social-media-based and survey-based) tracked
+                            each other extraordinarily well, although clear
+                            differences between text analysis methods and
+                            emotions exist. The Twitter measures of emotion
+                            were less closely related to survey-based
+                            questions on life satisfaction.
+
+                          </li>
+                          <li class="list-group-item">As regards the impact of COVID-19, Twitter
+                            data in 18 countries showed strong increases
+                            in anxiety and sadness during COVID-19
+                            (together with decreases in anger). These
+                            changes in anxiety and sadness were positively
+                            related to the incidence of COVID-19 itself and
+                            the stringency of anti-COVID measures.
+                          </li>
+                          <li class="list-group-item">How to best analyze social media data to
+                            achieve valid measures of emotions of the
+                            population is still an important research topic.
+                            Nonetheless, it is becoming increasingly clear
+                            that measures of emotion from social media
+                            can effectively complement measures based on
+                            social surveys when robust methods are applied
+                            — a big step forward for happiness research.
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Item 3 -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingThree">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Exploring the biological basis for happiness (Chapter 5)
+                      </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item">
+                            Genetic studies involving twin or family
+                            designs reveal that about 30-40% of the
+                            differences in happiness between people
+                            within a country are accounted for by genetic
+                            differences among individuals. The other
+                            60-70% of differences between people result
+                            from the effect of environmental influences
+                            that are independent of the genes.
+                          </li>
+                          <li class="list-group-item">Genome-Wide Association Studies show
+                            that the genetic influence comes from the
+                            cumulative effects of numerous genetic variants,
+                            each with small effects. The next step is to use
+                            the outcome of these large-scale studies to
+                            create a so-called Polygenic Score; a number 
+                            that summarises the estimated effect of the
+                            many genetic variants on an individual’s
+                            phenotype. It reflects an individual’s estimated
+                            genetic predisposition for a given trait and
+                            can be used as a predictor for that trait.
+                          </li>
+                          <li class="list-group-item">
+                            Some people are born with a set of genetic
+                            variants that makes it easier to feel happy,
+                            while others are less fortunate. But genes and
+                            environment are generally correlated: genes can
+                            affect people’s choice of environment and how
+                            others react to them. At the same time, genes
+                            can influence how people are affected by the
+                            world around them — there is ‘gene-environment interaction’.
+                          </li>
+                          <li class="list-group-item">The most consistent finding with respect to the
+                            brain areas involved in well-being is that a more
+                            active default mode network (DMN) is related
+                            to lower well-being. (The DMN is a large brain
+                            network primarily composed of the medial
+                            prefrontal cortex, posterior cingulate cortex/
+                            praecuneus, and angular gyrus). This network is
+                            most active when a person is not focused on the
+                            outside world, and the brain is at wakeful rest,
+                            such as during daydreaming and mind-wandering.
+                          </li>
+                          <li class="list-group-item">
+                            Many other processes in the human body are
+                            important for explaining individual differences
+                            in happiness and well-being among individuals.
+                            For example, based on the limited number of
+                            available studies, higher positive emotion is
+                            probably associated with higher levels of
+                            serotonin and lower levels of cortisol, whereas
+                            chronic activity of the immune system is linked
+                            to lower well-being.
+                          </li>
+                          <li class="list-group-item">We should use findings from genetically
+                            informative research to create happinessenhancing interventions, social policies, activities,
+                            and environments that make possible the
+                            flourishing of genetic potential and simultaneously
+                            offset vulnerability and risk.
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Item 4-->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                        Balance and Harmony (Chapter 6)
+                      </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item">Among positive experiences, Eastern culture
+                            gives special value to experiences of balance
+                            and harmony. These are important, low-arousal
+                            positive emotions, but they have been relatively
+                            neglected in happiness research, which has
+                            stronger roots in Western cultures.
+                          </li>
+                          <li class="list-group-item"> In 2020 for the first time, the Gallup World Poll
+                            asked questions on the experience of
+                            - Your life being in balance
+                            - Feeling at peace with your life
+                            - Experiencing calm for a lot of the day
+                            - Preferring a calm life to an exciting life
+                            - Focus on caring for others or self
+                          </li>
+                          <li class="list-group-item">The experiences of balance, peace, and calm are
+                            more prevalent in Western countries, which also
+                            experience the highest levels of satisfaction —
+                            and they are less prevalent in poorer countries,
+                            including those in East Asia.
+                            
+                          </li>
+                          <li class="list-group-item">The majority of people in almost every country
+                            prefer a calmer life to an exciting one. But that
+                            preference is no higher in Eastern countries than
+                            elsewhere. However, it is particularly high in the
+                            poorer countries, especially in Africa, where
+                            actual calm is low.
+                          </li>
+                          <li class="list-group-item">Both balance and peace contribute strongly to
+                            a satisfying life in all regions of the world.
+                            
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
           </div>
 
     </div>
 
+    <!-- Script -->
     <script src="js/bootstrap.js"></script>
 </body>
 </html>

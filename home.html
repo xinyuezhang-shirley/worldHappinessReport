@@ -1,3 +1,4 @@
+<!--home.html-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,22 +7,31 @@
     <title>Index</title>
     <link rel="stylesheet" href="css/bootstrap.css"/>
     <link rel="stylesheet" href="main.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
     <script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" ></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.11/jquery.csv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
 </head>
 <body>
     <div class="p-3 mb-5 bg-warning-subtle text-emphasis-warning">World Happiness Report 2022 Applet</div>
     <div class="container">
-
+        
+        <!-- Title-->
         <div class="col d-flex justify-content-center mx-auto p-2 mt-5">
             <h2>How Happy is Your Country?</h2>
         </div>
 
+        <!-- Page Nav Bar-->
         <ul class="nav justify-content-center">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="index.html">Start Page</a>
             </li>
+            
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="home.html">Home Page</a>
             </li>
@@ -30,12 +40,10 @@
             </li>
           </ul>
 
+          <!-- Countries Dropdown -->
           <div class="col d-flex justify-content-center ">
             <div class="card text-center" style="width: 80%;">
                 <div class="card-body p-3 bg-warning-subtle text-emphasis-warning">
-                  <p>Please either select from the drop down of countries included in the report or randomly generate a country to begin.
-                  </p>
-
                   <div class="row">
                     <div class="col-9">
                       <select class="form-select form-select-sm" id= "dropdown" aria-label=".form-select-sm example">
@@ -188,44 +196,132 @@
                         <option value="144">Zimbabwe</option> 
                       </select>
                     </div>
+
+                    <!-- Random Button -->
                     <div id="randombtn"class="col-3 d-grid gap-2">
                       <a class="btn btn-success">Random</a>
                     </div>
                   </div>
 
+                  <!-- Output for Country-->
                   <div class="form-floating my-3">
                     <textarea id="output" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2Disabled" style="height: 100px" disabled></textarea>
                     <label for="floatingTextarea2Disabled"> Country Ranking</label>
                   </div>
                   
+                  <!-- All Country Output Chart-->
+                  <div class="overflow-auto p-3 bg-light"
+                  style="max-height: 600px;">
+                    <div id="wrapper">
+                      <canvas id="chart"></canvas>
+                    </div>
+                  </div>
+
+                  <!-- Button trigger modal -->
+                  <div class="col mt-3">
+                    <button type="button" class="btn btn-outline-info mx-auto" data-toggle="modal" data-target="#exampleModal">
+                      Play Rank Guessing Game
+                    </button>
+                  </div>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Rank Guessing Game</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          Given a random country, guess its Happiness Rank by moving the bar and clicking "Make Guess" <br><br>
+                          
+                          <div id="generate"class="col mx-auto">
+                            <a class="btn btn-outline-success btn-small my-3">Generate Country</a>
+                          </div>
+
+                          <p>Your Country Is:</p>
+                          <span id="randomCountry"></span>
+
+                          <input type="range" class="form-range mt-5" min="1" max="146" id="customRange2">
+                          <div id="yourGuess">
+                            <p>Your Guess Is:</p>
+                            <span id="guessValue"></span>
+                          </div>
+
+                          <div id="guess"class="col mx-auto mt-5">
+                            <a class="btn btn-outline-primary btn-small my-3">Make Guess</a>
+                          </div>
+                          <span id="guessOutput"></span>
+
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                   <div class="col mt-3">
                     <a href="index.html" class="btn btn-outline-primary">Start Page</a>
                     <a href="data.html" class="btn btn-outline-primary">Data Page</a>
                   </div>
+
                 </div>
               </div>
           </div>
     </div>
+    <!-- Script -->
     <script src="main.js"></script>
-    <script>   //home.html
+    <script>  
       const dropdown = document.getElementById("dropdown");
       const selectedValue = dropdown.value;
       const randombtn = document.getElementById("randombtn");
-    
+      const rangeInput = document.getElementById("customRange2");
+      const guessValue = document.getElementById("guessValue");
+      const generate= document.getElementById("generate");
+      const guess= document.getElementById("guess");
+
+      /* Output when select country*/
       dropdown.addEventListener("change", (event) => {
         const selectedValue = dropdown.value;
         setOutputMain(selectedValue);
       });
 
+      /* Output when randomly generate country */
       randombtn.addEventListener("click", (event) => {
         var number = Math.floor(Math.random() * 146) + 1;
         setOutputMain(number);
         dropdown.value= number;
       });
 
-      window.onbeforeunload = function(){
+      /* Modal generate country */
+      generate.addEventListener("click", (event) => {
+        var number = Math.floor(Math.random() * 146) + 1;
+        setRandomModal(number);
+      });
+
+      /* Modal guess results */
+      guess.addEventListener("click", (event) => {
+        setGameResults();
+      });
+
+      /* Modal choose ranking */
+      rangeInput.addEventListener("input", (event) => {
+      const selectedValue = event.target.value;
+      guessValue.textContent = selectedValue;
+    });
+
+     /* Save the data when page changes */
+      window.onbeforeunload = function () {
         localStorage.setItem('saveValue', dropdown.value);
-      }
+        if (typeof mainChart !== 'undefined') {
+          mainChart.destroy(); // Destroy the main chart if it exists
+        }
+      };
+
+      /* Get saved data when page reloads*/
       window.onload=function(){
         var saveValue= localStorage.getItem('saveValue');
         setOutputMain(saveValue);
